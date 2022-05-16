@@ -1,20 +1,20 @@
-import { useState } from "react";
+import { useState } from "react/cjs/react.production.min";
 import logo from "@assets/logo.svg";
 import Counter from "@components/Counter/Counter";
 import Message from "@components/Message/Message";
 import Users from "@components/Users/Users";
 
-export default function Home() {
-  const [count, setCount] = useState(0);
-  const [message, setMessage] = useState("");
+const [count, setCount] = useState(0);
+const [message, setMessage] = useState("");
 
+export default function Home() {
   return (
     <header className="App-header">
-      <img className="App-logo" src={logo} alt="" />
+      <img src="{logo}" alt="" />
       <p>Regardez mon beau compteur :</p>
       <Counter count={count} setCount={setCount} setMessage={setMessage} />
 
-      <Message message={message} />
+      <Message message={msg} />
       <Users />
     </header>
   );
