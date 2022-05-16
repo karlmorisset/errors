@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./Users.css";
 import User from "@components/Users/User";
 
-export default function Users() {
+function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -20,3 +20,5 @@ export default function Users() {
     </div>
   );
 }
+
+export defaut Users
