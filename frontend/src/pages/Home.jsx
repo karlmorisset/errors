@@ -1,36 +1,21 @@
-import Counter from "@components/Counter";
+import { useState } from "react";
 import logo from "@assets/logo.svg";
+import Counter from "@components/Counter/Counter";
+import Message from "@components/Message/Message";
+import Users from "@components/Users/Users";
 
 export default function Home() {
+  const [count, setCount] = useState(0);
+  const [message, setMessage] = useState("");
+
   return (
     <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
+      <img className="App-logo" src={logo} alt="" />
+      <p>Regardez mon beau compteur :</p>
+      <Counter count={count} setCount={setCount} setMessage={setMessage} />
 
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
+      <Message message={message} />
+      <Users />
     </header>
   );
 }
